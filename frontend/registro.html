@@ -194,8 +194,93 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="js/jordy-main.js"></script>
-    <script src="js/auth-jordy.js"></script>
+    <script>
+    // Toggle mostrar contraseña
+    document.getElementById('togglePassword').addEventListener('click', function() {
+        const passwordInput = document.getElementById('password');
+        const icon = this.querySelector('i');
+        
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+        } else {
+            passwordInput.type = 'password';
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+        }
+    });
+    
+    document.getElementById('toggleConfirmPassword').addEventListener('click', function() {
+        const passwordInput = document.getElementById('confirmPassword');
+        const icon = this.querySelector('i');
+        
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+        } else {
+            passwordInput.type = 'password';
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+        }
+    });
+    
+    // Manejar registro
+    document.getElementById('registroForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const nombre = document.getElementById('nombre').value;
+        const email = document.getElementById('email').value;
+        const telefono = document.getElementById('telefono').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const acceptTerms = document.getElementById('acceptTerms').checked;
+        
+        // Validaciones
+        if (!nombre || !email || !telefono || !password || !confirmPassword) {
+            alert('Por favor completa todos los campos');
+            return;
+        }
+        
+        if (password.length < 6) {
+            alert('La contraseña debe tener al menos 6 caracteres');
+            return;
+        }
+        
+        if (password !== confirmPassword) {
+            alert('Las contraseñas no coinciden');
+            return;
+        }
+        
+        if (!acceptTerms) {
+            alert('Debes aceptar los términos y condiciones');
+            return;
+        }
+        
+        // Registrar usuario
+        if (window.registrarUsuarioAuth) {
+            const resultado = window.registrarUsuarioAuth(email, password, nombre, telefono);
+            
+            if (resultado.success) {
+                alert('✅ Registro exitoso. Ahora puedes iniciar sesión.');
+                window.location.href = 'login.html';
+            } else {
+                alert('❌ Error: ' + resultado.error);
+            }
+        } else {
+            alert('Sistema de registro no disponible');
+        }
+    });
+    
+    function registroConWhatsApp() {
+        const numeroJordy = '573004513605';
+        const mensaje = 'Hola Jordy, quiero registrarme en tu sistema de reservas. ¿Puedes ayudarme?';
+        const url = `https://wa.me/${numeroJordy}?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, '_blank');
+    }
+    
+    window.registroConWhatsApp = registroConWhatsApp;
+</script>
 </body>
 </html>
