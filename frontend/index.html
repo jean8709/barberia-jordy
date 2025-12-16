@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordy Barber - Corte Profesional</title>
+    <link rel="stylesheet" href="css/jordy-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/573004513605?text=Hola%20Jordy,%20quiero%20información%20sobre%20tus%20servicios" 
+       class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar-jordy">
+        <div class="nav-container">
+            <div class="logo-jordy">
+                <div class="logo-icon">
+                    <i class="fas fa-cut"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>JORDY BARBER</h1>
+                    <p class="tagline">Estilo y precisión en cada corte</p>
+                </div>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu-jordy" id="navMenu">
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#reservar" class="nav-link">Reservar</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                <li><a href="login.html" class="btn-login-jordy">Iniciar Sesión</a></li>
+                <li><a href="reservar.html" class="btn-reservar-jordy">Reservar Ahora</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-jordy">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2 class="hero-title">ESTILO QUE DEFINE</h2>
+            <h3 class="hero-subtitle">CORTES PROFESIONALES</h3>
+            <p class="hero-description">En Jordy Barber, cada corte es una obra de arte. Reserva tu cita y luce tu mejor estilo.</p>
+            
+            <div class="hero-buttons">
+                <a href="reservar.html" class="btn-hero-primary">
+                    <i class="fas fa-calendar-check"></i> Reservar Cita
+                </a>
+                <a href="https://wa.me/573004513605" class="btn-hero-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+            
+            <div class="hero-info">
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Horario: Lunes a Sábado 9am - 7pm</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Teléfono: 300 451 3605</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="servicios-jordy">
+        <div class="section-header">
+            <h2 class="section-title">NUESTROS SERVICIOS</h2>
+            <p class="section-subtitle">Precios especiales y calidad garantizada</p>
+        </div>
+        
+        <div class="servicios-grid-jordy">
+            <!-- Servicio 1 -->
+            <div class="servicio-card-jordy">
+                <div class="servicio-icon-jordy">
+                    <i class="fas fa-cut"></i>
+                    <i class="fas fa-beard"></i>
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="servicio-content">
+                    <h3>CORTE + BARBA + CEJAS</h3>
+                    <p class="servicio-desc">Completo cuidado facial</p>
+                    <div class="servicio-price">
+                        <span class="price">$20.000</span>
+                        <span class="duration"><i class="fas fa-clock"></i> 60 min</span>
+                    </div>
+                    <a href="reservar.html?servicio=corte-barba-cejas" class="btn-servicio">Reservar</a>
+                </div>
+            </div>
+            
+            <!-- Servicio 2 -->
+            <div class="servicio-card-jordy">
+                <div class="servicio-icon-jordy">
+                    <i class="fas fa-child"></i>
+                </div>
+                <div class="servicio-content">
+                    <h3>CORTE DE NIÑO</h3>
+                    <p class="servicio-desc">Especial para los más pequeños</p>
+                    <div class="servicio-price">
+                        <span class="price">$15.000</span>
+                        <span class="duration"><i class="fas fa-clock"></i> 30 min</span>
+                    </div>
+                    <a href="reservar.html?servicio=corte-nino" class="btn-servicio">Reservar</a>
+                </div>
+            </div>
+            
+            <!-- Servicio 3 -->
+            <div class="servicio-card-jordy">
+                <div class="servicio-icon-jordy">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="servicio-content">
+                    <h3>CORTE DE CABALLERO</h3>
+                    <p class="servicio-desc">Estilo clásico o moderno</p>
+                    <div class="servicio-price">
+                        <span class="price">$15.000</span>
+                        <span class="duration"><i class="fas fa-clock"></i> 45 min</span>
+                    </div>
+                    <a href="reservar.html?servicio=corte-caballero" class="btn-servicio">Reservar</a>
+                </div>
+            </div>
+            
+            <!-- Servicio 4 -->
+            <div class="servicio-card-jordy">
+                <div class="servicio-icon-jordy">
+                    <i class="fas fa-cut"></i>
+                    <i class="fas fa-beard"></i>
+                </div>
+                <div class="servicio-content">
+                    <h3>CORTE + BARBA</h3>
+                    <p class="servicio-desc">Combinación perfecta</p>
+                    <div class="servicio-price">
+                        <span class="price">$18.000</span>
+                        <span class="duration"><i class="fas fa-clock"></i> 50 min</span>
+                    </div>
+                    <a href="reservar.html?servicio=corte-barba" class="btn-servicio">Reservar</a>
+                </div>
+            </div>
+            
+            <!-- Servicio 5 -->
+            <div class="servicio-card-jordy">
+                <div class="servicio-icon-jordy">
+                    <i class="fas fa-cut"></i>
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="servicio-content">
+                    <h3>CORTE + CEJAS</h3>
+                    <p class="servicio-desc">Estilo completo facial</p>
+                    <div class="servicio-price">
+                        <span class="price">$17.000</span>
+                        <span class="duration"><i class="fas fa-clock"></i> 40 min</span>
+                    </div>
+                    <a href="reservar.html?servicio=corte-cejas" class="btn-servicio">Reservar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cómo Reservar Section -->
+    <section class="proceso-jordy">
+        <div class="section-header">
+            <h2 class="section-title">¿CÓMO RESERVAR?</h2>
+            <p class="section-subtitle">Sigue estos simples pasos</p>
+        </div>
+        
+        <div class="pasos-grid">
+            <div class="paso-card">
+                <div class="paso-numero">1</div>
+                <div class="paso-content">
+                    <h3>Elige tu Servicio</h3>
+                    <p>Selecciona el corte que deseas</p>
+                </div>
+            </div>
+            
+            <div class="paso-card">
+                <div class="paso-numero">2</div>
+                <div class="paso-content">
+                    <h3>Selecciona Fecha/Hora</h3>
+                    <p>Elige el día y hora disponible</p>
+                </div>
+            </div>
+            
+            <div class="paso-card">
+                <div class="paso-numero">3</div>
+                <div class="paso-content">
+                    <h3>Confirma tu Reserva</h3>
+                    <p>Recibe confirmación inmediata</p>
+                </div>
+            </div>
+            
+            <div class="paso-card">
+                <div class="paso-numero">4</div>
+                <div class="paso-content">
+                    <h3>Disfruta tu Corte</h3>
+                    <p>Ven y luce tu mejor estilo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="contacto-jordy">
+        <div class="contacto-container">
+            <div class="contacto-info">
+                <h2>CONTACTO</h2>
+                <div class="info-item-contacto">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Teléfono</h3>
+                        <p>300 451 3605</p>
+                    </div>
+                </div>
+                <div class="info-item-contacto">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h3>WhatsApp</h3>
+                        <p>Reservas y consultas</p>
+                        <a href="https://wa.me/573004513605" class="whatsapp-link" target="_blank">
+                            Enviar mensaje
+                        </a>
+                    </div>
+                </div>
+                <div class="info-item-contacto">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3>Horario</h3>
+                        <p>Lunes a Sábado</p>
+                        <p>9:00 AM - 7:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contacto-actions">
+                <h3>Reserva Rápida</h3>
+                <p>¿Listo para tu próximo corte?</p>
+                <a href="reservar.html" class="btn-contacto-reserva">
+                    <i class="fas fa-calendar-alt"></i> Reservar Cita Online
+                </a>
+                <a href="https://wa.me/573004513605" class="btn-contacto-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Reservar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-jordy">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-cut"></i>
+                </div>
+                <h3>JORDY BARBER</h3>
+                <p>Estilo y precisión profesional</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="reservar.html">Reservar</a></li>
+                    <li><a href="login.html">Mi Cuenta</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="https://wa.me/573004513605" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="#" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Jordy Barber. Todos los derechos reservados.</p>
+            <p>Desarrollado con <i class="fas fa-heart"></i> para tu estilo</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/jordy-main.js"></script>
+</body>
+</html>

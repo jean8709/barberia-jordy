@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Reservas - Jordy Barber</title>
+    <link rel="stylesheet" href="css/jordy-style.css">
+    <link rel="stylesheet" href="css/mis-reservas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/573004513605?text=Hola%20Jordy,%20necesito%20ayuda%20con%20mis%20reservas" 
+       class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="navbar-jordy">
+        <div class="nav-container">
+            <div class="logo-jordy">
+                <div class="logo-icon">
+                    <i class="fas fa-cut"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>JORDY BARBER</h1>
+                    <p class="tagline">Tus reservas en un solo lugar</p>
+                </div>
+            </div>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-menu-jordy" id="navMenu">
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="index.html#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="reservar.html" class="nav-link">Nueva Reserva</a></li>
+                <li><a href="mis-reservas.html" class="nav-link active">Mis Reservas</a></li>
+                <li><a href="#" id="logoutUser" class="btn-login-jordy">Cerrar Sesión</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Mis Reservas -->
+    <section class="hero-mis-reservas">
+        <div class="hero-mis-reservas-content">
+            <h1><i class="fas fa-calendar-check"></i> MIS RESERVAS</h1>
+            <p>Gestiona todas tus citas en Jordy Barber</p>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <section class="mis-reservas-content">
+        <div class="container-mis-reservas">
+            <!-- Estadísticas -->
+            <div class="stats-mis-reservas">
+                <div class="stat-card-reserva">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalReservas">0</h3>
+                        <p>Total Reservas</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card-reserva">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="reservasConfirmadas">0</h3>
+                        <p>Confirmadas</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card-reserva">
+                    <div class="stat-icon">
+                        <i class="fas fa-hourglass-half"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="reservasPendientes">0</h3>
+                        <p>Pendientes</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card-reserva">
+                    <div class="stat-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalGastado">$0</h3>
+                        <p>Total Gastado</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filtros-reservas">
+                <div class="filtro-group">
+                    <label for="filtroEstado"><i class="fas fa-filter"></i> Filtrar por:</label>
+                    <select id="filtroEstado">
+                        <option value="todas">Todas las reservas</option>
+                        <option value="pendiente">Pendientes</option>
+                        <option value="confirmada">Confirmadas</option>
+                        <option value="completada">Completadas</option>
+                        <option value="cancelada">Canceladas</option>
+                    </select>
+                </div>
+                
+                <button class="btn-nueva-reserva" onclick="window.location.href='reservar.html'">
+                    <i class="fas fa-plus"></i> Nueva Reserva
+                </button>
+            </div>
+
+            <!-- Lista de Reservas -->
+            <div class="reservas-lista" id="reservasLista">
+                <!-- Las reservas se cargarán aquí -->
+                <div class="loading-reservas">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Cargando tus reservas...</p>
+                </div>
+            </div>
+
+            <!-- Sin Reservas -->
+            <div class="sin-reservas" id="sinReservas" style="display: none;">
+                <div class="sin-reservas-icon">
+                    <i class="fas fa-calendar-times"></i>
+                </div>
+                <h3>No tienes reservas aún</h3>
+                <p>¡Agenda tu primera cita en Jordy Barber!</p>
+                <a href="reservar.html" class="btn-reservar-ahora">
+                    <i class="fas fa-cut"></i> Reservar Ahora
+                </a>
+            </div>
+
+            <!-- Instrucciones -->
+            <div class="instrucciones-reservas">
+                <h3><i class="fas fa-info-circle"></i> Instrucciones</h3>
+                <div class="instrucciones-grid">
+                    <div class="instruccion-item">
+                        <i class="fas fa-edit"></i>
+                        <h4>Reagendar</h4>
+                        <p>Puedes reagendar tu cita hasta 2 horas antes</p>
+                    </div>
+                    <div class="instruccion-item">
+                        <i class="fas fa-times-circle"></i>
+                        <h4>Cancelar</h4>
+                        <p>Cancelaciones hasta 2 horas antes sin costo</p>
+                    </div>
+                    <div class="instruccion-item">
+                        <i class="fas fa-bell"></i>
+                        <h4>Recordatorios</h4>
+                        <p>Recibirás WhatsApp 24h y 1h antes</p>
+                    </div>
+                    <div class="instruccion-item">
+                        <i class="fas fa-question-circle"></i>
+                        <h4>¿Ayuda?</h4>
+                        <p>Contacta a Jordy por WhatsApp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-jordy">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-cut"></i>
+                </div>
+                <h3>JORDY BARBER</h3>
+                <p>Tu estilo, nuestra atención</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="reservar.html">Nueva Reserva</a></li>
+                    <li><a href="mis-reservas.html">Mis Reservas</a></li>
+                    <li><a href="admin.html">Panel Admin</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Contacto Rápido</h4>
+                <a href="https://wa.me/573004513605" class="whatsapp-footer" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp: 300 451 3605
+                </a>
+                <p>Respuesta en minutos</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Jordy Barber. jordybarber.netlify.app</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Detalles -->
+    <div id="modalDetalles" class="modal-reserva">
+        <div class="modal-content-reserva">
+            <span class="close-modal-reserva">&times;</span>
+            <div id="modalDetallesContent">
+                <!-- Contenido dinámico -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jordy-main.js"></script>
+    <script src="js/mis-reservas.js"></script>
+</body>
+</html>
