@@ -1,0 +1,147 @@
+/* === ESTILOS GENERALES JORDY BARBER === */
+/* (Contenido actual de jordy-style.css) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --primary: #2c3e50;
+    --secondary: #e74c3c;
+    --accent: #f39c12;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --gray: #95a5a6;
+    --success: #27ae60;
+    --warning: #f1c40f;
+    --whatsapp: #25D366;
+    --transition: all 0.3s ease;
+}
+
+body {
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* === NAVBAR === */
+.navbar-jordy {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo-jordy {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    background: var(--primary);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.logo-text h1 {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.tagline {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+/* === BOTONES === */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(44, 62, 80, 0.3);
+}
+
+/* === WHATSAPP FLOAT === */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--whatsapp);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    transition: var(--transition);
+}
+
+/* === FOOTER === */
+.footer-jordy {
+    background: var(--primary);
+    color: white;
+    padding: 3rem 0;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* === MEDIA QUERIES === */
+@media (max-width: 768px) {
+    .nav-menu-jordy {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .nav-menu-jordy.active {
+        display: flex;
+    }
+}
